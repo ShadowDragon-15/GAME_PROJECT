@@ -1,0 +1,137 @@
+[gd_scene load_steps=25 format=3 uid="uid://ctehptddusajd"]
+
+[ext_resource type="Script" uid="uid://cir4x73ljvvat" path="res://player/player.gd" id="1_32hag"]
+[ext_resource type="Texture2D" uid="uid://cdjdwip33u47f" path="res://assets/Legacy Collection/Assets/Characters/Bridge Heroine/Heroine base/Sprites/idle/player-idle-1.png" id="1_wodsf"]
+[ext_resource type="Texture2D" uid="uid://84rnxmhc4q2o" path="res://assets/Legacy Collection/Assets/Characters/Bridge Heroine/Heroine base/Sprites/idle/player-idle-2.png" id="2_32hag"]
+[ext_resource type="Texture2D" uid="uid://c1ycupncyv1ux" path="res://assets/Legacy Collection/Assets/Characters/Bridge Heroine/Heroine base/Sprites/player-attack/player-attack-1.png" id="2_x7c3f"]
+[ext_resource type="Texture2D" uid="uid://dd2tj4xive27q" path="res://assets/Legacy Collection/Assets/Characters/Bridge Heroine/Heroine base/Sprites/player-attack/player-attack-2.png" id="3_bjvpn"]
+[ext_resource type="Texture2D" uid="uid://4mx10h6ip42c" path="res://assets/Legacy Collection/Assets/Characters/Bridge Heroine/Heroine base/Sprites/idle/player-idle-3.png" id="3_tqiix"]
+[ext_resource type="Texture2D" uid="uid://df3cg0tb7hkh4" path="res://assets/Legacy Collection/Assets/Characters/Bridge Heroine/Heroine base/Sprites/idle/player-idle-4.png" id="4_e7oew"]
+[ext_resource type="Texture2D" uid="uid://g203tgwmt0rp" path="res://assets/Legacy Collection/Assets/Characters/Bridge Heroine/Heroine base/Sprites/player-attack/player-attack-3.png" id="4_s7qer"]
+[ext_resource type="Texture2D" uid="uid://dhbt81tuveg2s" path="res://assets/Legacy Collection/Assets/Characters/Bridge Heroine/Heroine base/Sprites/jump/player-jump-1.png" id="5_c35mf"]
+[ext_resource type="Texture2D" uid="uid://d0jt8e2ggvwy2" path="res://assets/Legacy Collection/Assets/Characters/Bridge Heroine/Heroine base/Sprites/player-attack/player-attack-4.png" id="5_g4c7l"]
+[ext_resource type="Texture2D" uid="uid://c1usantpb7sy5" path="res://assets/Legacy Collection/Assets/Characters/Bridge Heroine/Heroine base/Sprites/jump/player-jump-2.png" id="6_65viv"]
+[ext_resource type="Texture2D" uid="uid://cq2o7ralh60vi" path="res://assets/Legacy Collection/Assets/Characters/Bridge Heroine/Heroine base/Sprites/player-attack/player-attack-5.png" id="6_knn7v"]
+[ext_resource type="Texture2D" uid="uid://dkpbd2osaqsju" path="res://assets/Legacy Collection/Assets/Characters/Bridge Heroine/Heroine base/Sprites/jump/player-jump-3.png" id="7_x7c3f"]
+[ext_resource type="Texture2D" uid="uid://nvr7t71dfm7" path="res://assets/Legacy Collection/Assets/Characters/Bridge Heroine/Heroine base/Sprites/jump/player-jump-4.png" id="8_bjvpn"]
+[ext_resource type="Texture2D" uid="uid://bnb0bffsqi115" path="res://assets/Legacy Collection/Assets/Characters/Bridge Heroine/Heroine base/Sprites/run/player-run-1.png" id="9_s7qer"]
+[ext_resource type="Texture2D" uid="uid://8k1pwufnp7rd" path="res://assets/Legacy Collection/Assets/Characters/Bridge Heroine/Heroine base/Sprites/run/player-run-2.png" id="10_g4c7l"]
+[ext_resource type="Texture2D" uid="uid://c254deohn82qd" path="res://assets/Legacy Collection/Assets/Characters/Bridge Heroine/Heroine base/Sprites/run/player-run-3.png" id="11_knn7v"]
+[ext_resource type="Texture2D" uid="uid://cao1p3owflhi2" path="res://assets/Legacy Collection/Assets/Characters/Bridge Heroine/Heroine base/Sprites/run/player-run-4.png" id="12_7pqkx"]
+[ext_resource type="Texture2D" uid="uid://k8eggxyiy67c" path="res://assets/Legacy Collection/Assets/Characters/Bridge Heroine/Heroine base/Sprites/run/player-run-5.png" id="13_uw77l"]
+[ext_resource type="Texture2D" uid="uid://bd8ykuj1gynca" path="res://assets/Legacy Collection/Assets/Characters/Bridge Heroine/Heroine base/Sprites/run/player-run-6.png" id="14_rptt4"]
+[ext_resource type="Texture2D" uid="uid://bm2hchbsowhtb" path="res://assets/Legacy Collection/Assets/Characters/Bridge Heroine/Heroine base/Sprites/run/player-run-7.png" id="15_r7pn3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2uvqg"]
+radius = 26.0
+height = 128.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1s1yo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x7c3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bjvpn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_s7qer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g4c7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_knn7v")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wodsf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_32hag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tqiix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e7oew")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_c35mf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_65viv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_x7c3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bjvpn")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_s7qer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_g4c7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_knn7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7pqkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_uw77l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_rptt4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_r7pn3")
+}],
+"loop": true,
+"name": &"run",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7c3f"]
+size = Vector2(105, 116.5)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_32hag")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(60, 586)
+shape = SubResource("CapsuleShape2D_2uvqg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(59, 553)
+scale = Vector2(2.19922, 2.85938)
+sprite_frames = SubResource("SpriteFrames_1s1yo")
+animation = &"attack"
+frame = 1
+frame_progress = 0.547385
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(138.5, 586.75)
+shape = SubResource("RectangleShape2D_x7c3f")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

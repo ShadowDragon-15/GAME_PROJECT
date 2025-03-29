@@ -1,0 +1,68 @@
+[gd_scene load_steps=13 format=3 uid="uid://c4fehc6u4kkpi"]
+
+[ext_resource type="Script" uid="uid://deqasab7nrdbj" path="res://phan_dien/dragon.gd" id="1_8u3fw"]
+[ext_resource type="Texture2D" uid="uid://b57gnakj8h458" path="res://assets/Legacy Collection/Assets/Characters/sunny-dragon/sprites/_0000_Layer-1.png" id="1_lfs6a"]
+[ext_resource type="Texture2D" uid="uid://ti3mrme1ipqu" path="res://assets/Legacy Collection/Assets/Characters/sunny-dragon/sprites/_0001_Layer-2.png" id="2_8u3fw"]
+[ext_resource type="Texture2D" uid="uid://cbwp2ohp1bxgq" path="res://assets/Legacy Collection/Assets/Characters/sunny-dragon/sprites/_0002_Layer-3.png" id="3_yrwgq"]
+[ext_resource type="Texture2D" uid="uid://4l7c34d21o1i" path="res://assets/Legacy Collection/Assets/Characters/sunny-dragon/sprites/_0003_Layer-4.png" id="4_x3tp3"]
+[ext_resource type="Texture2D" uid="uid://dkbwit4m55dql" path="res://assets/Legacy Collection/Assets/Characters/sunny-dragon/sprites/_0004_Layer-5.png" id="5_inqj8"]
+[ext_resource type="Texture2D" uid="uid://d1djcp0hadc3o" path="res://assets/Legacy Collection/Assets/Characters/sunny-dragon/sprites/_0005_Layer-6.png" id="6_b0ewh"]
+[ext_resource type="Texture2D" uid="uid://d3voxpb3hhoy4" path="res://assets/Legacy Collection/Assets/Characters/sunny-dragon/sprites/_0006_Layer-7.png" id="7_euacf"]
+[ext_resource type="Texture2D" uid="uid://hspor1amj3pn" path="res://assets/Legacy Collection/Assets/Characters/sunny-dragon/sprites/_0007_Layer-8.png" id="8_8bsj7"]
+[ext_resource type="Texture2D" uid="uid://bqfmgtds3hy1i" path="res://assets/Legacy Collection/Assets/Characters/sunny-dragon/sprites/_0008_Layer-9.png" id="9_m2863"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wela"]
+size = Vector2(249, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_86g6u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lfs6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8u3fw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yrwgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x3tp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_inqj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b0ewh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_euacf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8bsj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_m2863")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_8u3fw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(538.5, 213)
+shape = SubResource("RectangleShape2D_3wela")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(552, 202)
+sprite_frames = SubResource("SpriteFrames_86g6u")
+animation = &"idle"
+frame_progress = 0.333328
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

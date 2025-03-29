@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://bqwk82fb8mcg4"]
+
+[ext_resource type="Script" uid="uid://ungyqso7nn5l" path="res://cow/cow.gd" id="1_sn4v6"]
+[ext_resource type="Texture2D" uid="uid://cdlaxtbt48blv" path="res://Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites.png" id="2_5afi5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qeo58"]
+size = Vector2(161, 121)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7t31"]
+atlas = ExtResource("2_5afi5")
+region = Rect2(0, 6, 32, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mnlq"]
+atlas = ExtResource("2_5afi5")
+region = Rect2(32, 6, 32, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbtva"]
+atlas = ExtResource("2_5afi5")
+region = Rect2(64, 6, 32, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yv736"]
+atlas = ExtResource("2_5afi5")
+region = Rect2(0, 35, 32, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tr86i"]
+atlas = ExtResource("2_5afi5")
+region = Rect2(32, 35, 32, 29)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rkieq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7t31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mnlq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbtva")
+}],
+"loop": true,
+"name": &"idie_cow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yv736")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tr86i")
+}],
+"loop": true,
+"name": &"run_cow",
+"speed": 5.0
+}]
+
+[node name="cow" type="CharacterBody2D"]
+script = ExtResource("1_sn4v6")
+
+[node name="colli_cow" type="CollisionShape2D" parent="."]
+position = Vector2(65.5, 50.5)
+shape = SubResource("RectangleShape2D_qeo58")
+
+[node name="Ani_cow" type="AnimatedSprite2D" parent="."]
+position = Vector2(65, 50.25)
+scale = Vector2(5.0625, 4.46552)
+sprite_frames = SubResource("SpriteFrames_rkieq")
+animation = &"idie_cow"
+frame_progress = 0.973199
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu10ngc61bl1j"]
+
+[ext_resource type="PackedScene" uid="uid://cn2ldfo0tmxyw" path="res://player/player.tscn" id="1_77wl0"]
+[ext_resource type="PackedScene" uid="uid://bqwk82fb8mcg4" path="res://cow/cow.tscn" id="2_id2vk"]
+
+[node name="worldgame" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_77wl0")]
+position = Vector2(69, 549)
+
+[node name="cow" parent="." instance=ExtResource("2_id2vk")]
+position = Vector2(384, 530)
