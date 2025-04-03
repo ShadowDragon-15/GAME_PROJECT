@@ -18,7 +18,6 @@ func _physics_process(delta):
 		else:
 			$AnimatedSprite2D.flip_h = true  # Nhìn trái
 			$AnimatedSprite2D.play("run")
-	print(Global.dame)
 		
 
 

@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://ceicfojlr12u8"]
+
+[ext_resource type="Script" uid="uid://cb305ebexl645" path="res://mushroom/mushroom_shoot/mushroomshot.gd" id="1_pec4a"]
+[ext_resource type="Texture2D" uid="uid://cax2nsl5doff8" path="res://assets/Legacy Collection/Assets/Characters/sunny-mushroom/spritesheets/gas-alone.png" id="1_ynaph"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pec4a"]
+atlas = ExtResource("1_ynaph")
+region = Rect2(0, 8, 63, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0l1nd"]
+atlas = ExtResource("1_ynaph")
+region = Rect2(63, 8, 63, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xc4gp"]
+atlas = ExtResource("1_ynaph")
+region = Rect2(126, 8, 63, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmw2x"]
+atlas = ExtResource("1_ynaph")
+region = Rect2(189, 8, 63, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2g0p"]
+atlas = ExtResource("1_ynaph")
+region = Rect2(252, 8, 63, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjcxe"]
+atlas = ExtResource("1_ynaph")
+region = Rect2(315, 8, 63, 29)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_70bgo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pec4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0l1nd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xc4gp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmw2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2g0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjcxe")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0l1nd"]
+radius = 3.0
+
+[node name="ShootPoint" type="RigidBody2D"]
+script = ExtResource("1_pec4a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, -13)
+scale = Vector2(1.3254, 1.64655)
+sprite_frames = SubResource("SpriteFrames_70bgo")
+animation = &"shoot"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.96046e-08, 0)
+shape = SubResource("CircleShape2D_0l1nd")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0

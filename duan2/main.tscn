@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ctehptddusajd" path="res://player/player.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://c4fehc6u4kkpi" path="res://phan_dien/dragon.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://c6ttmgrivhwj7" path="res://phan_dien/character_body_2d.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://crj0icvrxytmc" path="res://mushroom/mushroom_modal/mushroom.tscn" id="4_1bvp3"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1bvp3"]
 
@@ -92,5 +92,5 @@ position = Vector2(-19, -29)
 [node name="CharacterBody2D2" parent="." instance=ExtResource("2_h2yge")]
 position = Vector2(29, -25)
 
-[node name="CharacterBody2D3" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(364, -19)
+[node name="mushroom" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(950, 584)

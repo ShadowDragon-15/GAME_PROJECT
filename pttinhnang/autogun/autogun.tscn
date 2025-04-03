@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://uxxekqhib3kq"]
+
+[ext_resource type="Script" uid="uid://dpvggp5748bfx" path="res://autogun/autogun.gd" id="1_p4m6m"]
+[ext_resource type="Texture2D" uid="uid://dsyg6s5bdnsxc" path="res://icon.svg" id="2_fisyr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ij6vw"]
+size = Vector2(116, 111)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f50pn"]
+size = Vector2(1570, 25)
+
+[node name="autogun" type="CharacterBody2D"]
+position = Vector2(0, 25)
+script = ExtResource("1_p4m6m")
+
+[node name="colli_autogun" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_ij6vw")
+
+[node name="spi_autogun" type="Sprite2D" parent="."]
+position = Vector2(0, 6)
+scale = Vector2(1, 0.59375)
+texture = ExtResource("2_fisyr")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-145, 4)
+
+[node name="dealzone" type="Area2D" parent="."]
+
+[node name="colli_dealzone" type="CollisionShape2D" parent="dealzone"]
+position = Vector2(-1, 7)
+shape = SubResource("RectangleShape2D_f50pn")
+
+[connection signal="body_entered" from="dealzone" to="." method="_on_area_2d_body_entered"]

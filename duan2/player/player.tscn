@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ctehptddusajd"]
+[gd_scene load_steps=24 format=3 uid="uid://ctehptddusajd"]
 
 [ext_resource type="Script" uid="uid://cir4x73ljvvat" path="res://player/player.gd" id="1_32hag"]
 [ext_resource type="Texture2D" uid="uid://cdjdwip33u47f" path="res://assets/Legacy Collection/Assets/Characters/Bridge Heroine/Heroine base/Sprites/idle/player-idle-1.png" id="1_wodsf"]
@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bm2hchbsowhtb" path="res://assets/Legacy Collection/Assets/Characters/Bridge Heroine/Heroine base/Sprites/run/player-run-7.png" id="15_r7pn3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2uvqg"]
-radius = 26.0
+radius = 32.0
 height = 128.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1s1yo"]
@@ -109,9 +109,6 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7c3f"]
-size = Vector2(105, 116.5)
-
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_32hag")
 
@@ -121,17 +118,9 @@ shape = SubResource("CapsuleShape2D_2uvqg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(59, 553)
+position = Vector2(32, 549)
 scale = Vector2(2.19922, 2.85938)
 sprite_frames = SubResource("SpriteFrames_1s1yo")
 animation = &"attack"
 frame = 1
 frame_progress = 0.547385
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(138.5, 586.75)
-shape = SubResource("RectangleShape2D_x7c3f")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
