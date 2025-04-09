@@ -56,7 +56,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_0l1nd"]
 radius = 3.0
 
-[node name="ShootPoint" type="RigidBody2D"]
+[node name="ShootPoint" type="CharacterBody2D"]
 script = ExtResource("1_pec4a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -69,6 +69,3 @@ animation = &"shoot"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5.96046e-08, 0)
 shape = SubResource("CircleShape2D_0l1nd")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 5.0

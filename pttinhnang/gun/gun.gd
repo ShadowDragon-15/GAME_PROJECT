@@ -1,9 +1,11 @@
 extends CharacterBody2D
-var direction = 1
-var speed: float = 2
 
-func _ready():
-	pass
+@export var speed: float = 400.0
+var direction: Vector2 = Vector2.RIGHT
+
 func _physics_process(delta):
-	position.x+=direction*speed
+
+	velocity = direction * speed
+	rotation = velocity.angle()
+
 	move_and_slide()

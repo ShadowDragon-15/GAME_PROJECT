@@ -16,10 +16,13 @@ func _physics_process(delta: float) -> void:
 		velocity.y += 20  # Điều chỉnh trọng lực nếu cần
 
 	move_and_slide()
+func fire():
+	var bullet = preload("res://mushroom/mushroom_shoot/mushroomshot.tscn")
+	var new_bollet = bullet.instantiate()
+	new_bollet.position = $Marker2D.global_position  # Đặt đạn ở vị trí cây nấm
+	get_parent().add_child(new_bollet)
 
 func _on_dealzone_body_entered(body: Node2D) -> void:
 	if body.name == "CharacterBody2D":
 		$Ani_mushroom.play("attack")
-		var new_bollet = bullet.instantiate()
-		new_bollet.global_position = $Marker2D.global_position  # Đặt đạn ở vị trí cây nấm
-		get_parent().add_child(new_bollet)
+		fire()

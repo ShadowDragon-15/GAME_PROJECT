@@ -7,7 +7,7 @@
 size = Vector2(116, 111)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f50pn"]
-size = Vector2(1570, 25)
+size = Vector2(1331, 32.25)
 
 [node name="autogun" type="CharacterBody2D"]
 position = Vector2(0, 25)
@@ -23,12 +23,15 @@ scale = Vector2(1, 0.59375)
 texture = ExtResource("2_fisyr")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(-145, 4)
+position = Vector2(145, 36)
 
 [node name="dealzone" type="Area2D" parent="."]
 
 [node name="colli_dealzone" type="CollisionShape2D" parent="dealzone"]
-position = Vector2(-1, 7)
+position = Vector2(-2, -1)
 shape = SubResource("RectangleShape2D_f50pn")
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(8, -196)
 
 [connection signal="body_entered" from="dealzone" to="." method="_on_area_2d_body_entered"]

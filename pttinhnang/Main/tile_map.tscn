@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cagqv8iqfgyl8"]
+[gd_scene load_steps=7 format=3 uid="uid://cagqv8iqfgyl8"]
 
 [ext_resource type="Texture2D" uid="uid://dsyg6s5bdnsxc" path="res://icon.svg" id="1_figuo"]
 [ext_resource type="PackedScene" uid="uid://bspfh6dt7rf18" path="res://player/player.tscn" id="2_pbswg"]
 [ext_resource type="PackedScene" uid="uid://uxxekqhib3kq" path="res://autogun/autogun.tscn" id="3_ej42f"]
+[ext_resource type="PackedScene" uid="uid://bx65xnf7tp8qd" path="res://gun/gun.tscn" id="4_2i6bs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pbswg"]
 texture = ExtResource("1_figuo")
@@ -76,7 +77,7 @@ texture = ExtResource("1_figuo")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_pbswg")
 
-[node name="TileMap" type="TileMap"]
+[node name="wall" type="TileMap"]
 tile_set = SubResource("TileSet_ej42f")
 format = 2
 layer_0/tile_data = PackedInt32Array(2621440, 65536, 1, 2621441, 65536, 1, 2621442, 65536, 1, 2621443, 65536, 1, 2621444, 65536, 1, 2621445, 65536, 1, 2621446, 65536, 1, 2621447, 65536, 1, 2621448, 65536, 1, 2621449, 65536, 1, 2621450, 65536, 1, 2621451, 65536, 1, 2621452, 65536, 1, 2621453, 65536, 1, 2621454, 65536, 1, 2621455, 65536, 1, 2621456, 65536, 1, 2621457, 65536, 1, 2621458, 65536, 1, 2621459, 65536, 1, 2621460, 65536, 1, 2621461, 65536, 1, 2621462, 65536, 1, 2621463, 65536, 1, 2621464, 65536, 1, 2621465, 65536, 1, 2621466, 65536, 1, 2621467, 65536, 1, 2621468, 65536, 1, 2621469, 65536, 1, 2621470, 65536, 1, 2621471, 65536, 1, 2621472, 65536, 1, 2621473, 65536, 1, 2621474, 65536, 1, 2621475, 65536, 1, 2621476, 65536, 1, 2621477, 65536, 1, 2621478, 65536, 1, 2621479, 65536, 1, 2621480, 65536, 1, 2621481, 65536, 1, 2621482, 65536, 1, 2621483, 65536, 1, 2621484, 65536, 1, 2621485, 65536, 1, 2621486, 65536, 1, 2621487, 65536, 1, 2621488, 65536, 1, 2621489, 65536, 1, 2621490, 65536, 1, 2621491, 65536, 1, 2621492, 65536, 1, 2621493, 65536, 1, 2621494, 65536, 1, 2621495, 65536, 1, 2621496, 65536, 1, 2621497, 65536, 1, 2621498, 65536, 1, 2621499, 65536, 1, 2621500, 65536, 1, 2621501, 65536, 1, 2621502, 65536, 1, 2621503, 65536, 1, 2621504, 65536, 1, 2621505, 65536, 1, 2621506, 65536, 1, 2621507, 65536, 1, 2621508, 65536, 1, 2621509, 65536, 1, 2621510, 65536, 1, 2621511, 65536, 1)
@@ -85,4 +86,7 @@ layer_0/tile_data = PackedInt32Array(2621440, 65536, 1, 2621441, 65536, 1, 26214
 position = Vector2(63, 573)
 
 [node name="autogun" parent="." instance=ExtResource("3_ej42f")]
-position = Vector2(657, 604)
+position = Vector2(828, 581)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_2i6bs")]
+position = Vector2(491, 341)
