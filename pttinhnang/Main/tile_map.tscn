@@ -86,7 +86,7 @@ layer_0/tile_data = PackedInt32Array(2621440, 65536, 1, 2621441, 65536, 1, 26214
 position = Vector2(63, 573)
 
 [node name="autogun" parent="." instance=ExtResource("3_ej42f")]
-position = Vector2(828, 581)
+position = Vector2(784, 586)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_2i6bs")]
 position = Vector2(491, 341)

@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 func fire():
 	var bullet = preload("res://mushroom/mushroom_shoot/mushroomshot.tscn")
 	var new_bollet = bullet.instantiate()
-	new_bollet.position = $Marker2D.global_position  # Đặt đạn ở vị trí cây nấm
+	new_bollet.position = $dealzone/Marker2D.global_position  # Đặt đạn ở vị trí cây nấm
 	get_parent().add_child(new_bollet)
 
 func _on_dealzone_body_entered(body: Node2D) -> void:
