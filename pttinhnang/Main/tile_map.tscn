@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cagqv8iqfgyl8"]
+[gd_scene load_steps=6 format=3 uid="uid://cagqv8iqfgyl8"]
 
 [ext_resource type="Texture2D" uid="uid://dsyg6s5bdnsxc" path="res://icon.svg" id="1_figuo"]
 [ext_resource type="PackedScene" uid="uid://bspfh6dt7rf18" path="res://player/player.tscn" id="2_pbswg"]
 [ext_resource type="PackedScene" uid="uid://uxxekqhib3kq" path="res://autogun/autogun.tscn" id="3_ej42f"]
-[ext_resource type="PackedScene" uid="uid://bx65xnf7tp8qd" path="res://gun/gun.tscn" id="4_2i6bs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pbswg"]
 texture = ExtResource("1_figuo")
@@ -86,7 +85,4 @@ layer_0/tile_data = PackedInt32Array(2621440, 65536, 1, 2621441, 65536, 1, 26214
 position = Vector2(63, 573)
 
 [node name="autogun" parent="." instance=ExtResource("3_ej42f")]
-position = Vector2(784, 586)
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("4_2i6bs")]
-position = Vector2(491, 341)
+position = Vector2(398, 596)

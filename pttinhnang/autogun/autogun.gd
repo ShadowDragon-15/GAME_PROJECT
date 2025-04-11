@@ -11,6 +11,17 @@ const JUMP_VELOCITY = -400.0
 
 func _physics_process(delta: float) -> void:
 	move_and_slide()
+func sky():
+	var direction_2=[
+		Vector2.DOWN.rotated(deg_to_rad(-30)),
+		Vector2.DOWN,
+		Vector2.DOWN.rotated(deg_to_rad(30))
+	]
+	for i in direction_2:
+		var bullet_2 = bullet_scene.instantiate()
+		bullet_2.position = $dealzone2/Marker2D2.global_position
+		bullet_2.direction = i
+		get_parent().add_child(bullet_2)
 	
 
 func fire(mark: Marker2D, kt : bool):
@@ -50,5 +61,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_dealzone_2_body_entered(body: Node2D) -> void:
 	if body.name=="player":
-		fire($dealzone2/Marker2D2,true)
+		sky()
 	pass # Replace with function body.
